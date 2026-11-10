@@ -24,4 +24,18 @@ CREATE TABLE races(
     name VARCHAR(50) NOT NULL UNIQUE,
     circuit VARCHAR(50) NOT NULL UNIQUE,
     country VARCHAR(50) NOT NULL
-)
+);
+
+CREATE TABLE result(
+    driver_id INTEGER NOT NULL,
+    race_id INTEGER NOT NULL,
+    start_position INTEGER CHECK (start_position>0),
+    finish_position INTEGER CHECK (finish_position>0),
+    PRIMARY KEY (driver_id, race_id),
+    CONSTRAINT fk_results_driver
+        foreign key (driver_id) REFERENCES drivers(drivers_id)
+        ON DELETE RESTRICT,
+    CONSTRAINT fk_result_race
+        foreign key (race_id) REFERENCES races(races_id)
+        ON DELETE RESTRICT
+);
