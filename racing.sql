@@ -55,3 +55,21 @@ INSERT INTO races (name, circuit, country) VALUES
     ('Monaco Grand Prix', 'Circuit de Monaco', 'Monaco'),
     ('Italian Grand Prix', 'Autodromo Nazionale Monza', 'Italien');
 
+-- 3. drivers
+INSERT INTO drivers (name, birth_date_year, team_id) VALUES
+    ('Lando Norris', 1999, 1),
+    ('Oscar Piastri', 2001, 1),
+    ('George Russell', 1998, 2),
+    ('Kimi Antonelli', 2006, 2),
+    ('Max Verstappen', 1997, 3),
+    ('Isack Hadjar', 2004, 3),
+    ('Charles Leclerc', 1997, 4),
+    ('Lewis Hamilton', 1985, 4);
+
+
+--4. results
+Insert INTO result (driver_id, race_id, start_position, finish_position) VALUES
+    (1, 1, 2, 5), (2, 1, 4, 6), (3, 1, 1, 1), (4, 1, 3, 2), (5, 1, 6, 7), (6, 1, 8, NULL), (7, 1, 5, 3), (8, 1, 7, 4),
+    (1, 2, 1, 1), (2, 2, 2, 2), (3, 2, 3, 4), (4, 2, 6, 5), (5, 2, 4, 3), (6, 2, 8, 8), (7, 2, 5, 6), (8, 2, 7, 7),
+    (1, 3, 4, 3), (2, 3, 5, 5), (3, 3, 3, 2), (4, 3, 6, 6), (5, 3, 7, 7), (6, 3, 8, 8), (7, 3, 1, 1), (8, 3, 2, 4);
+
