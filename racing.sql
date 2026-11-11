@@ -39,3 +39,19 @@ CREATE TABLE result(
         foreign key (race_id) REFERENCES races(races_id)
         ON DELETE RESTRICT
 );
+
+-- 1. teams
+INSERT INTO teams (name, country) VALUES
+    ('McLaren', 'Storbritannien'),
+    ('Mercedes', 'Tyskland'),
+    ('Red Bull Racing', 'Österrike'),
+    ('Ferrari', 'Italien');
+
+
+-- 2. races
+INSERT INTO races (name, circuit, country) VALUES
+    ('Belgian Grand Prix', 'Circuit de Spa-Francorchamps', 'Belgien'),
+    ('Japanese Grand Prix', 'Suzuka International Racing Course', 'Japan'),
+    ('Monaco Grand Prix', 'Circuit de Monaco', 'Monaco'),
+    ('Italian Grand Prix', 'Autodromo Nazionale Monza', 'Italien');
+
