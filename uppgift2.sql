@@ -24,4 +24,16 @@ ORDER BY customers.country, customers.city;
 -- upg 6
 SELECT last_name
 FROM employees
-WHERE employees.last_name LIKE '%an'
+WHERE employees.last_name LIKE '%an';
+
+-- upg 7
+SELECT *
+FROM employees
+WHERE employees.title LIKE '%Vice%' 
+OR employees.title LIKE '%President%' 
+OR employees.title LIKE '%Manager%';
+
+
+-- Beräkning och vollkor --
+
+-- upg 8
