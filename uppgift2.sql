@@ -109,7 +109,6 @@ SELECT unit_price, company_name
 FROM products
 JOIN suppliers ON (suppliers.supplier_id = products.supplier_id)
 WHERE company_name = 'Tokyo Traders';
-
 -- uppdatera priset
 UPDATE products
 SET unit_price = unit_price * 1.10
