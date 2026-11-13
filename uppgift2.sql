@@ -69,4 +69,51 @@ AND categories.category_id ='1';
 SELECT product_name, category_name
 FROM products
 JOIN categories ON (categories.category_id = products.category_id)
-WHERE product_name = 'Lakkalikööri'
+WHERE product_name = 'Lakkalikööri';
+
+-- upg 13
+SELECT product_name, company_name
+FROM suppliers
+JOIN products ON (products.supplier_id = suppliers.supplier_id)
+WHERE product_name = 'Gravad lax';
+
+
+-- upg 15
+SELECT COUNT (*) AS antal
+FROM employees
+WHERE title = 'Sales Representative';
+
+
+-- upg 16
+SELECT SUM(order_details.unit_price * order_details.quantity) AS total
+FROM orders
+JOIN order_details ON(orders.order_id = order_details.order_id)
+WHERE order_date ='1996-12-12';
+
+-- upg 17
+-- upg 18
+
+-- Ändra data
+-- upg 19
+SELECT SUM(unit_price * units_in_stock) AS total
+FROM products
+WHERE category_id = '4';
+-- 1166
+
+UPDATE products
+SET unit_price = unit_price * 1.20
+WHERE category_id ='4';
+
+-- upg 20
+SELECT unit_price, company_name
+FROM products
+JOIN suppliers ON (suppliers.supplier_id = products.supplier_id)
+WHERE company_name = 'Tokyo Traders';
+
+-- uppdatera priset
+UPDATE products
+SET unit_price = unit_price * 1.10
+FROM suppliers
+WHERE suppliers.supplier_id = products.supplier_id
+AND company_name = 'Tokyo Traders';
+
