@@ -77,6 +77,16 @@ FROM suppliers
 JOIN products ON (products.supplier_id = suppliers.supplier_id)
 WHERE product_name = 'Gravad lax';
 
+-- upg 14
+SELECT order_details.order_id, product_name, company_name
+FROM order_details
+JOIN products ON (products.product_id = order_details.product_id)
+JOIN suppliers ON (suppliers.supplier_id = products.supplier_id)
+WHERE order_details.order_id = 10249;
+
+-- 10249	Tofu	Mayumi's
+-- 10249	Manjimup Dried Apples	G'day, Mate
+
 
 -- upg 15
 SELECT COUNT (*) AS antal
@@ -91,6 +101,12 @@ JOIN order_details ON(orders.order_id = order_details.order_id)
 WHERE order_date ='1996-12-12';
 
 -- upg 17
+SELECT product_name, category_name, SUM(order_details.quantity) AS total_quantity
+FROM products
+JOIN categories ON (categories.category_id = products.category_id)
+JOIN order_details ON (order_details.product_id = products.product_id)
+GROUP BY product_name, category_name;
+
 -- upg 18
 
 -- Ändra data

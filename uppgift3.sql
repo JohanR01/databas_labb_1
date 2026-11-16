@@ -47,7 +47,7 @@ CREATE VIEW oversikt
 AS
 SELECT product_name, category_name,unit_price
 FROM products
-JOIN categories ON(products.categoryt_id = categories.category_id);
+JOIN categories ON(products.category_id = categories.category_id);
 
 -- upg 4
 
