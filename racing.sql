@@ -73,3 +73,19 @@ Insert INTO result (driver_id, race_id, start_position, finish_position) VALUES
     (1, 2, 1, 1), (2, 2, 2, 2), (3, 2, 3, 4), (4, 2, 6, 5), (5, 2, 4, 3), (6, 2, 8, 8), (7, 2, 5, 6), (8, 2, 7, 7),
     (1, 3, 4, 3), (2, 3, 5, 5), (3, 3, 3, 2), (4, 3, 6, 6), (5, 3, 7, 7), (6, 3, 8, 8), (7, 3, 1, 1), (8, 3, 2, 4);
 
+
+-- Test kommandon
+SELECT drivers.name FROM drivers;
+
+Insert INTO drivers(name, birth_date_year, team_id) VALUES ('Joe Doe', 2026, 4);
+
+SELECT drivers.name, drivers_id
+FROM drivers
+WHERE drivers.birth_date_year = 2026;
+
+UPDATE drivers
+SET name = 'Joe Doe 2'
+WHERE drivers.name = 'Joe Doe';
+
+DELETE FROM drivers
+WHERE name = 'Joe Doe 2';

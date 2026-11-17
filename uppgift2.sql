@@ -108,6 +108,11 @@ JOIN order_details ON (order_details.product_id = products.product_id)
 GROUP BY product_name, category_name;
 
 -- upg 18
+SELECT customer_id, company_name
+FROM customers
+WHERE customer_id NOT IN (SELECT customer_id FROM orders);
+
+
 
 -- Ändra data
 -- upg 19
