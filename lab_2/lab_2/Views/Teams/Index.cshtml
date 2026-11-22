@@ -1,0 +1,19 @@
+@model IEnumerable<lab_2.Models.Team>
+
+<h1>Teams</h1>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Namn</th>
+        <th>Land</th>
+    </tr>
+    @foreach (var team in Model)
+    {
+        <tr>
+            <td>@team.TeamsID</td>
+            <td>@team.Name</td>
+            <td>@team.Country</td>
+        </tr>
+    }
+</table>
