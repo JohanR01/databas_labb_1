@@ -1,0 +1,21 @@
+@model IEnumerable<lab_2.Models.Driver>
+
+<h1>Drivers</h1>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Namn</th>
+        <th>Födelsedatum</th>
+        <th>TeamID</th>
+    </tr>
+    @foreach (var Driver in Model)
+    {
+        <tr>
+            <td>@Driver.DriversID</td>
+            <td>@Driver.Name</td>
+            <td>@Driver.BirthDateYear</td>
+            <td>@Driver.TeamID</td>
+        </tr>
+    }
+</table>
