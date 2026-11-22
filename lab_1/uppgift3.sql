@@ -1,5 +1,5 @@
 -- upg 1
-CREATE PROCEDURE update_price()
+CREATE PROCEDURE update_price_test()
 LANGUAGE plpgsql
 AS $$
 BEGIN
@@ -11,6 +11,8 @@ END;
 $$;
 
 CALL update_price();
+
+CALL update_price_test();
 
 select unit_price FROM products;
 
@@ -49,6 +51,7 @@ SELECT product_name, category_name,unit_price
 FROM products
 JOIN categories ON(products.category_id = categories.category_id);
 
+
 -- upg 4
 
 CREATE VIEW overview_sek
@@ -80,6 +83,9 @@ BEGIN;
 UPDATE products 
 SET unit_price = unit_price * 0.95 
 WHERE product_id = 1;
+
+SELECT unit_price FROM products
+WHERE product_id = 1;
 --Kör därefter en felaktig UPDATE, exempelvis genom att använda ett kolumnnamn som inte finns.
 UPDATE products 
 SET unit_price = unit_pris * 0.95 
@@ -89,3 +95,4 @@ SELECT product_id, unit_price FROM products
 WHERE product_id = 1 OR product_id = 2;
 --Använd ROLLBACK för att avsluta den misslyckade transaktionen innan du fortsätter arbeta.
 ROLLBACK;
+COMMIT;

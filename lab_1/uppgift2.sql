@@ -95,7 +95,7 @@ WHERE title = 'Sales Representative';
 
 
 -- upg 16
-SELECT SUM(order_details.unit_price * order_details.quantity) AS total
+SELECT SUM(order_details.unit_price * order_details.quantity*(1- discount)) AS total
 FROM orders
 JOIN order_details ON(orders.order_id = order_details.order_id)
 WHERE order_date ='1996-12-12';

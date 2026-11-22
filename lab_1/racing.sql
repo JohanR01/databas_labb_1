@@ -89,3 +89,19 @@ WHERE drivers.name = 'Joe Doe';
 
 DELETE FROM drivers
 WHERE name = 'Joe Doe 2';
+
+SELECT name FROM drivers;
+
+Insert INTO teams(name, country) VALUES('nocco', 'sverige');
+Insert INTO drivers(name, birth_date_year, team_id) VALUES ('Joe Doe', 2026, 6);
+
+SELECT * FROM teams
+WHERE name ='nocco';
+
+DELETE FROM drivers
+WHERE team_id = 6;
+
+DELETE FROM teams
+WHERE name = 'nocco';
+
+SELECT * FROM teams
