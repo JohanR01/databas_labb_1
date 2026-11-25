@@ -17,5 +17,12 @@ namespace TeamsController.Controllers
         {
             return View(TeamList);
         }
+
+        public IActionResult Delete(int id)
+        {
+            var team = TeamList.FirstOrDefault(t => t.TeamsID == id);
+            if (team != null) TeamList.Remove(team);
+            return RedirectToAction("Index");
+        }
     }
 }
