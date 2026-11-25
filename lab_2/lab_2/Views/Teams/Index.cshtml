@@ -7,6 +7,7 @@
         <th>ID</th>
         <th>Namn</th>
         <th>Land</th>
+        <th></th>
     </tr>
     @foreach (var team in Model)
     {
@@ -14,6 +15,7 @@
             <td>@team.TeamsID</td>
             <td>@team.Name</td>
             <td>@team.Country</td>
+            <td><a asp-action="Delete" asp-route-id="@team.TeamsID"> Remove</a></td>
         </tr>
     }
 </table>
