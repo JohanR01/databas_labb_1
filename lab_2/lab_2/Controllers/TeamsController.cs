@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using lab_2.Models;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace TeamsController.Controllers
 {
@@ -15,6 +16,8 @@ namespace TeamsController.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.CountTeams = TeamList.Count;
+            ViewData["Title"] = "Alla Lag";
             return View(TeamList);
         }
 
@@ -34,6 +37,7 @@ namespace TeamsController.Controllers
         [HttpPost]
         public IActionResult Create (Team team)
         {    
+            team.Name = team.Name.Trim();
             team.TeamsID = TeamList.Any() ? TeamList.Max(t => t.TeamsID) + 1 : 1;
             TeamList.Add(team);
             return Redirect ("Index");
