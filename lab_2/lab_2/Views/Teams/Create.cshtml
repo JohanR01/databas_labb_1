@@ -1,0 +1,17 @@
+@model lab_2.Models.Team
+
+<h1>Lägg till ditt egna lag</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Country" class="form-label"></label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Spara</button>
+    <a asp-action="Index" class="btn btn-secondary">Avbryt</a>
+</form>
+

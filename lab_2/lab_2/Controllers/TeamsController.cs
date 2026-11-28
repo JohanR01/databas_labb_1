@@ -24,5 +24,18 @@ namespace TeamsController.Controllers
             if (team != null) TeamList.Remove(team);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create (Team team)
+        {
+            TeamList.Add(team);
+            return Redirect ("Index");
+        }
     }
 }
