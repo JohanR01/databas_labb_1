@@ -33,7 +33,8 @@ namespace TeamsController.Controllers
 
         [HttpPost]
         public IActionResult Create (Team team)
-        {
+        {    
+            team.TeamsID = TeamList.Any() ? TeamList.Max(t => t.TeamsID) + 1 : 1;
             TeamList.Add(team);
             return Redirect ("Index");
         }
