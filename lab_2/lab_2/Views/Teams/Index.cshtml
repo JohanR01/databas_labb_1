@@ -2,7 +2,10 @@
 
 <h1>@ViewData["Title"]</h1>
 <p>Antal lag: @ViewBag.CountTeams</p>
-
+@if (ViewBag.LastAdd != null)
+{
+<p>Laget som lades till senast var: @ViewBag.LastAdd</p>
+}
 <table class="table">
     <tr>
         <th>ID</th>

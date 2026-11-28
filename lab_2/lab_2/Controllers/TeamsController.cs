@@ -17,6 +17,7 @@ namespace TeamsController.Controllers
         public IActionResult Index()
         {
             ViewBag.CountTeams = TeamList.Count;
+            ViewBag.LastAdd = HttpContext.Session.GetString("LastAdd");
             ViewData["Title"] = "Alla Lag";
             return View(TeamList);
         }
@@ -40,6 +41,9 @@ namespace TeamsController.Controllers
             team.Name = team.Name.Trim();
             team.TeamsID = TeamList.Any() ? TeamList.Max(t => t.TeamsID) + 1 : 1;
             TeamList.Add(team);
+
+            HttpContext.Session.SetString("LastAdd",team.Name);
+
             return Redirect ("Index");
         }
     }
